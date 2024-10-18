@@ -44,12 +44,5 @@ contract ERC20Token is ERC20 {
         _mint(msg.sender, 100 * 10**decimals());
     }
 
-    function mint(address to, uint256 amount) public onlyOwner {
-        require(to != address(0), "Cannot mint to the zero address");
-        _mint(to, amount);
-    }
 
-    function balanceOf(address account) public view override returns (uint256) {
-        return super.balanceOf(account);
-    }
 }
